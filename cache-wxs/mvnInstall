@@ -1,0 +1,4 @@
+mvn install:install-file -Dfile=/Users/ei4577/software/IBM/wxs-standalone/ObjectGrid/lib/ogclient.jar -DgroupId=com.ibm.websphere -DartifactId=ogclient -Dversion=8.6.0 -Dpackaging=jar
+mvn install:install-file -Dfile=/Users/ei4577/software/IBM/wxs-standalone/ObjectGrid/lib/objectgrid.jar -DgroupId=com.ibm.websphere -DartifactId=objectgrid -Dversion=8.6.0 -Dpackaging=jar
+
+

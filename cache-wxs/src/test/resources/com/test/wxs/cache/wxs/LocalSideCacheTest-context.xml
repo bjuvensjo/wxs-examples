@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:objectgrid="http://www.ibm.com/schema/objectgrid"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+http://www.ibm.com/schema/objectgrid http://www.ibm.com/schema/objectgrid">
+
+	<bean id="cache" class="com.test.wxs.cache.wxs.WXSCache">
+		<constructor-arg>
+			<bean class="com.test.wxs.cache.Config">
+				<property name="scope" value="REQUEST" />
+			</bean>
+		</constructor-arg>
+		<constructor-arg>
+			<bean class="com.test.wxs.cache.wxs.LocalObjectGridFactory">
+				<property name="objectGridName" value="local-side-grid" />
+				<property name="objectGridXML" value="classpath:/com/test/wxs/cache/wxs/LocalSideCacheTestObjectGrid.xml" />
+			</bean>
+		</constructor-arg>
+		<constructor-arg value="local-side-map" />
+	</bean>
+</beans>

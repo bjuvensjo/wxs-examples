@@ -1,0 +1,12 @@
+<objectGridConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ibm.com/ws/objectgrid/config ../objectGrid.xsd"
+	xmlns="http://ibm.com/ws/objectgrid/config">
+
+	<objectGrids>
+		<objectGrid name="local-grid">
+			<backingMap name="local-map" lockStrategy="PESSIMISTIC" lockTimeout="10" numberOfBuckets="5"
+				numberOfLockBuckets="2" timeToLive="900" ttlEvictorType="LAST_ACCESS_TIME"
+				evictionTriggers="MEMORY_USAGE_THRESHOLD" />
+		</objectGrid>
+	</objectGrids>
+</objectGridConfig>
+

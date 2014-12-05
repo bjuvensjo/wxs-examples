@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<objectGridConfig xmlns="http://ibm.com/ws/objectgrid/config"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<objectGrids>
+		<objectGrid name="distributed-preloaded-grid" txIsolation="REPEATABLE_READ"
+			txTimeout="600">
+			<backingMap copyMode="COPY_ON_READ_AND_COMMIT"
+				lockStrategy="OPTIMISTIC" lockTimeout="15" name="distributed-preloaded-map" template="false"
+				timeToLive="0" />
+		</objectGrid>
+	</objectGrids>
+	<backingMapPluginCollections />
+</objectGridConfig>

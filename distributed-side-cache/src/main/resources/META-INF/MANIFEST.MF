@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1417718318698
+Build-Jdk: 1.7.0_21
+Built-By: ei4577
+Bundle-ManifestVersion: 2
+Bundle-Name: distributed-side-cache
+Bundle-SymbolicName: distributed-side-cache
+Bundle-Version: 0.0.1.SNAPSHOT
+Created-By: Apache Maven Bundle Plugin
+Import-Package: com.test.wxs.model.account;version="[0.0,1)",com.test.wx
+ s.model
+Originally-Created-By: Apache Maven Bundle Plugin
+Tool: Bnd-2.3.0.201405100607

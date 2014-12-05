@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<deploymentPolicy xmlns="http://ibm.com/ws/objectgrid/deploymentPolicy"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<objectgridDeployment objectgridName="distributed-preloaded-grid">
+		<mapSet maxAsyncReplicas="0" maxSyncReplicas="0"
+			minSyncReplicas="0" name="gridMapSet" numberOfPartitions="3">
+			<map ref="distributed-preloaded-map" />
+		</mapSet>
+	</objectgridDeployment>
+</deploymentPolicy>

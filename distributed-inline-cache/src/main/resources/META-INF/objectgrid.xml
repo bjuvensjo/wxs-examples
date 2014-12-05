@@ -1,0 +1,17 @@
+<objectGridConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ibm.com/ws/objectgrid/config ../objectGrid.xsd"
+    xmlns="http://ibm.com/ws/objectgrid/config">
+
+    <objectGrids>
+        <objectGrid name="distributed-inline-grid">
+            <backingMap name="distributed-inline-map" lockStrategy="PESSIMISTIC" lockTimeout="10" numberOfBuckets="5"
+                numberOfLockBuckets="2" timeToLive="900" ttlEvictorType="LAST_ACCESS_TIME" evictionTriggers="MEMORY_USAGE_THRESHOLD"
+                pluginCollectionRef="pluginCollection" />
+        </objectGrid>
+    </objectGrids>
+
+    <backingMapPluginCollections>
+        <backingMapPluginCollection id="pluginCollection">
+            <bean id="Loader" className="com.test.wxs.distributed.inline.cache.CacheLoader" />
+        </backingMapPluginCollection>
+    </backingMapPluginCollections>
+</objectGridConfig>
