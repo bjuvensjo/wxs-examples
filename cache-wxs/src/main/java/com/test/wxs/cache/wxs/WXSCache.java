@@ -20,8 +20,8 @@ import com.ibm.websphere.objectgrid.ObjectMap;
 import com.ibm.websphere.objectgrid.Session;
 
 /**
- * The WXSCache is an implementation of the {@link Cache} interface that delegates the actual caching to the WebSphere
- * eXstreme Scale cache implementation.
+ * The WXSCache is an implementation of the {@link Cache} interface that delegates the actual caching to the WebSphere eXstreme Scale cache
+ * implementation.
  * 
  * Replication and timeToLive is supported by configuration of WXS, i.e. Config values are not used for this.
  */
@@ -36,9 +36,12 @@ public class WXSCache<K extends CacheKey, V extends Serializable> implements Cac
     /**
      * Creates a WXSCache with the specified parameters.
      * 
-     * @param config the config
-     * @param objectGridFactory the objectGridFactory
-     * @param mapName the mapName
+     * @param config
+     *            the config
+     * @param objectGridFactory
+     *            the objectGridFactory
+     * @param mapName
+     *            the mapName
      */
     public WXSCache(Config config, ObjectGridFactory objectGridFactory, String mapName) {
         this(config, objectGridFactory, mapName, null);
@@ -47,16 +50,19 @@ public class WXSCache<K extends CacheKey, V extends Serializable> implements Cac
     /**
      * Creates a WXSCache with the specified parameters.
      * 
-     * @param config the config
-     * @param objectGridFactory the objectGridFactory
-     * @param mapName the mapName
-     * @param cacheKeyStrategy the cacheKeyStrategy
+     * @param config
+     *            the config
+     * @param objectGridFactory
+     *            the objectGridFactory
+     * @param mapName
+     *            the mapName
+     * @param cacheKeyStrategy
+     *            the cacheKeyStrategy
      */
-    public WXSCache(Config config, ObjectGridFactory objectGridFactory, String mapName,
-            CacheKeyStrategy<K> cacheKeyStrategy) {
+    public WXSCache(Config config, ObjectGridFactory objectGridFactory, String mapName, CacheKeyStrategy<K> cacheKeyStrategy) {
         if (log.isDebugEnabled()) {
-            log.debug("config: {}, objectGridFactory: {}, mapName: {}, cacheKeyStrategy: {}", new Object[] { config,
-                    objectGridFactory, mapName, cacheKeyStrategy });
+            log.debug("config: {}, objectGridFactory: {}, mapName: {}, cacheKeyStrategy: {}", new Object[] { config, objectGridFactory,
+                    mapName, cacheKeyStrategy });
         }
         this.config = config;
         this.objectGridFactory = objectGridFactory;
@@ -91,16 +97,16 @@ public class WXSCache<K extends CacheKey, V extends Serializable> implements Cac
                 ObjectMap objectMap = session.getMap(mapName);
                 CacheObject cacheObject = (CacheObject) objectMap.get(cacheKey);
                 log.debug("cacheObject: {}", cacheObject);
-//                String currentRequestId = null;
+                // String currentRequestId = null;
                 if (cacheObject != null) {
                     value = (V) cacheObject.getValue();
-//                    currentRequestId = cacheObject.getServiceRequestId();
+                    // currentRequestId = cacheObject.getServiceRequestId();
                 }
                 session.commit();
-//                String timestamp = new DateTime().toString();
-//                LogContextFetcher.get().getSupportData()
-//                        .addEvent(new CacheResponse(timestamp, currentRequestId, mapName, cacheKey.toString()));
-//                AuditLogger.getInstance().logCacheResponse(timestamp, currentRequestId, mapName, cacheKey.toString());
+                // String timestamp = new DateTime().toString();
+                // LogContextFetcher.get().getSupportData()
+                // .addEvent(new CacheResponse(timestamp, currentRequestId, mapName, cacheKey.toString()));
+                // AuditLogger.getInstance().logCacheResponse(timestamp, currentRequestId, mapName, cacheKey.toString());
             } catch (Exception e) {
                 CacheException exception = exceptionCreator.getCacheException(Error.GET, "Key [" + cacheKey + "]", e);
                 log.error("Can not get {}.", key, exception);
@@ -177,23 +183,22 @@ public class WXSCache<K extends CacheKey, V extends Serializable> implements Cac
                     session.commit();
                     log.debug("cacheObject: {}", cacheObject);
                     V value = null;
-//                    String currentRequestId = null;
+                    // String currentRequestId = null;
                     if (cacheObject != null) {
                         value = (V) cacheObject.getValue();
-//                        currentRequestId = cacheObject.getServiceRequestId();
+                        // currentRequestId = cacheObject.getServiceRequestId();
                     }
                     values.add(value);
 
-//                    String timestamp = new DateTime().toString();
-//                    LogContextFetcher.get().getSupportData()
-//                            .addEvent(new CacheResponse(timestamp, currentRequestId, mapName, cacheKey.toString()));
-//                    AuditLogger.getInstance().logCacheResponse(timestamp, currentRequestId, mapName,
-//                            cacheKey.toString());
+                    // String timestamp = new DateTime().toString();
+                    // LogContextFetcher.get().getSupportData()
+                    // .addEvent(new CacheResponse(timestamp, currentRequestId, mapName, cacheKey.toString()));
+                    // AuditLogger.getInstance().logCacheResponse(timestamp, currentRequestId, mapName,
+                    // cacheKey.toString());
                 }
 
             } catch (Exception e) {
-                CacheException exception = exceptionCreator
-                        .getCacheException(Error.GET, "Key [" + cacheKeys + "]", e);
+                CacheException exception = exceptionCreator.getCacheException(Error.GET, "Key [" + cacheKeys + "]", e);
                 log.error("Can not get {}.", keys, exception);
                 throw exception;
             }
@@ -227,8 +232,7 @@ public class WXSCache<K extends CacheKey, V extends Serializable> implements Cac
                 }
                 session.commit();
             } catch (Exception e) {
-                CacheException exception = exceptionCreator
-                        .getCacheException(Error.GET, "Key [" + cacheKeys + "]", e);
+                CacheException exception = exceptionCreator.getCacheException(Error.GET, "Key [" + cacheKeys + "]", e);
                 log.error("Can not get {}.", keys, exception);
                 throw exception;
             }
@@ -246,7 +250,7 @@ public class WXSCache<K extends CacheKey, V extends Serializable> implements Cac
     public void put(K key, V value) {
         log.debug("Enter. key: {}, value: {}", key, value);
         if (config.isOn()) {
-//            CacheObject cacheObject = new CacheObject(CommonContextFetcher.get().getServiceRequestId(), value);
+            // CacheObject cacheObject = new CacheObject(CommonContextFetcher.get().getServiceRequestId(), value);
             // TODO! Set serviceRequestId correctly!
             CacheObject cacheObject = new CacheObject(java.util.UUID.randomUUID().toString(), value);
             Serializable cacheKey = cacheKeyStrategy.createCacheKey(key);
@@ -290,8 +294,7 @@ public class WXSCache<K extends CacheKey, V extends Serializable> implements Cac
                 objectMap.remove(cacheKey);
                 session.commit();
             } catch (Exception e) {
-                CacheException exception = exceptionCreator.getCacheException(Error.REMOVE, "Key [" + cacheKey + "]",
-                        e);
+                CacheException exception = exceptionCreator.getCacheException(Error.REMOVE, "Key [" + cacheKey + "]", e);
                 log.error("Can not get {}.", key, exception);
                 throw exception;
             }

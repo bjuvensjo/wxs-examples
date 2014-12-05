@@ -17,11 +17,11 @@ import com.ibm.websphere.objectgrid.plugins.LogSequence;
 import com.ibm.websphere.objectgrid.plugins.OptimisticCollisionException;
 
 public class LocalInlineCacheTestLoader implements Loader {
-	private Logger log = LoggerFactory.getLogger(LocalInlineCacheTestLoader.class);
+    private Logger log = LoggerFactory.getLogger(LocalInlineCacheTestLoader.class);
 
-	@Override
-	public void batchUpdate(TxID txID, LogSequence logSequence) throws LoaderException, OptimisticCollisionException {
-	}
+    @Override
+    public void batchUpdate(TxID txID, LogSequence logSequence) throws LoaderException, OptimisticCollisionException {
+    }
 
     @SuppressWarnings({ "rawtypes", "unchecked" })
     @Override
@@ -39,7 +39,7 @@ public class LocalInlineCacheTestLoader implements Loader {
         return result;
     }
 
-	@Override
-	public void preloadMap(Session session, BackingMap backingMap) throws LoaderException {
-	}
+    @Override
+    public void preloadMap(Session session, BackingMap backingMap) throws LoaderException {
+    }
 }

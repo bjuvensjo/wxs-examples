@@ -6,12 +6,9 @@ public class ExceptionCreator {
     /**
      * Error messages.
      */
-    public enum Error {        
-        INITIALIZE(100, "Can not initialize"),
-        GET(101, "Error get from cache"),
-        PUT(102, "Error put in cache"),
-        REMOVE(103, "Error remove from cache");
-        
+    public enum Error {
+        INITIALIZE(100, "Can not initialize"), GET(101, "Error get from cache"), PUT(102, "Error put in cache"), REMOVE(103,
+                "Error remove from cache");
 
         private String message;
         private final int code;
@@ -48,7 +45,8 @@ public class ExceptionCreator {
     /**
      * Creates an exception using the supplied {@link Error}
      * 
-     * @param error the error.
+     * @param error
+     *            the error.
      * @return a new {@link CacheException}.
      */
     public CacheException getCacheException(Error error) {
@@ -58,7 +56,8 @@ public class ExceptionCreator {
     /**
      * Creates an exception using the supplied {@link Error}
      * 
-     * @param error the error.
+     * @param error
+     *            the error.
      * @return a new {@link CacheException}.
      */
     public CacheException getCacheException(Error error, String additionalInfo) {
@@ -68,8 +67,10 @@ public class ExceptionCreator {
     /**
      * Creates an exception using the supplied {@link Error} and cause
      * 
-     * @param error the error.
-     * @param cause the cause.
+     * @param error
+     *            the error.
+     * @param cause
+     *            the cause.
      * @return a new {@link CacheException}.
      */
     public CacheException getCacheException(Error error, Throwable cause) {

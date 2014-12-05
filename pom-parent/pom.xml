@@ -1,5 +1,5 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.test.wxs</groupId>
     <artifactId>pom-parent</artifactId>
@@ -9,7 +9,7 @@
     <properties>
         <grids.directory>/Users/ei4577/software/IBM/wlp/usr/servers/myserver/grids</grids.directory>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <skipITTests>true</skipITTests>        
+        <skipITTests>true</skipITTests>
     </properties>
     <build>
         <pluginManagement>
@@ -33,17 +33,17 @@
                             </configuration>
                         </execution>
                         <!-- <execution> -->
-                        <!--     <id>wrap-dependencies</id> -->
-                        <!--     <phase>prepare-package</phase> -->
-                        <!--     <goals> -->
-                        <!--         <goal>wrap</goal> -->
-                        <!--     </goals> -->
-                        <!--     <configuration> -->
-                        <!--         <wrapImportPackage>;</wrapImportPackage> -->
-                        <!--     </configuration> -->
+                        <!-- <id>wrap-dependencies</id> -->
+                        <!-- <phase>prepare-package</phase> -->
+                        <!-- <goals> -->
+                        <!-- <goal>wrap</goal> -->
+                        <!-- </goals> -->
+                        <!-- <configuration> -->
+                        <!-- <wrapImportPackage>;</wrapImportPackage> -->
+                        <!-- </configuration> -->
                         <!-- </execution> -->
                     </executions>
-                </plugin>                
+                </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
@@ -72,15 +72,15 @@
                     <version>2.16</version>
                 </plugin>
                 <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>                    
+                    <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-resources-plugin</artifactId>
                     <version>2.7</version>
-                </plugin>                
+                </plugin>
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>exec-maven-plugin</artifactId>
                     <version>1.2.1</version>
-                </plugin>            
+                </plugin>
             </plugins>
         </pluginManagement>
 
@@ -164,7 +164,7 @@
                 <artifactId>spring-test</artifactId>
                 <version>4.1.2.RELEASE</version>
                 <scope>test</scope>
-            </dependency>                
+            </dependency>
         </dependencies>
     </dependencyManagement>
 </project>

@@ -14,8 +14,10 @@ import com.test.wxs.cache.Config;
  */
 public class ObjectCacheKeyStrategy<K extends CacheKey> implements CacheKeyStrategy<K> {
     private Config config;
-    
-    /* (non-Javadoc)
+
+    /*
+     * (non-Javadoc)
+     * 
      * @see com.test.wxs.cache.wxs.key.CacheKeyStrategy#init(com.test.wxs.cache.Config)
      */
     @Override
@@ -23,7 +25,9 @@ public class ObjectCacheKeyStrategy<K extends CacheKey> implements CacheKeyStrat
         this.config = config;
     }
 
-    /* (non-Javadoc)
+    /*
+     * (non-Javadoc)
+     * 
      * @see com.test.wxs.cache.wxs.key.CacheKeyStrategy#createCacheKeys(java.util.List)
      */
     @Override
@@ -37,7 +41,9 @@ public class ObjectCacheKeyStrategy<K extends CacheKey> implements CacheKeyStrat
         return objectCacheKeys;
     }
 
-    /* (non-Javadoc)
+    /*
+     * (non-Javadoc)
+     * 
      * @see com.test.wxs.cache.wxs.key.CacheKeyStrategy#createCacheKey(com.test.wxs.cache.CacheKey)
      */
     @Override

@@ -16,40 +16,42 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @ContextConfiguration
 public class LocalObjectGridFactoryTest {
 
-	@Autowired
-	private ObjectGridFactory objectGridFactory;
+    @Autowired
+    private ObjectGridFactory objectGridFactory;
 
-	@Test
-	public void testGetObjectGrid() {
-		try {
-	        assertNotNull(objectGridFactory.getObjectGrid());
+    @Test
+    public void testGetObjectGrid() {
+        try {
+            assertNotNull(objectGridFactory.getObjectGrid());
         } catch (Exception e) {
-	        fail(e.getMessage());
+            fail(e.getMessage());
         }
-	}
-	
-	@Test
-	public void testSameObjectGridWithinOneContext() {
-		try {
-	        assertSame(objectGridFactory.getObjectGrid(), objectGridFactory.getObjectGrid());
+    }
+
+    @Test
+    public void testSameObjectGridWithinOneContext() {
+        try {
+            assertSame(objectGridFactory.getObjectGrid(), objectGridFactory.getObjectGrid());
         } catch (Exception e) {
-	        fail(e.getMessage());
+            fail(e.getMessage());
         }
-	}
-	
-	@Test
-	public void testSameObjectGridWithinMultipleContexts() {
-		try {
-	        ClassPathXmlApplicationContext ctx1 = new ClassPathXmlApplicationContext("/com/test/wxs/cache/wxs/LocalObjectGridFactoryTest-context.xml");
-	        ClassPathXmlApplicationContext ctx2 = new ClassPathXmlApplicationContext("/com/test/wxs/cache/wxs/LocalObjectGridFactoryTest-context.xml");
-	        LocalObjectGridFactory localObjectGridFactory1 = ctx1.getBean(LocalObjectGridFactory.class);
-	        LocalObjectGridFactory localObjectGridFactory2 = ctx2.getBean(LocalObjectGridFactory.class);
-	        ctx1.close();
-	        ctx2.close();
-	        assertNotSame(localObjectGridFactory1, localObjectGridFactory2);
-	        assertSame(localObjectGridFactory1.getObjectGrid(), localObjectGridFactory2.getObjectGrid());
+    }
+
+    @Test
+    public void testSameObjectGridWithinMultipleContexts() {
+        try {
+            ClassPathXmlApplicationContext ctx1 = new ClassPathXmlApplicationContext(
+                    "/com/test/wxs/cache/wxs/LocalObjectGridFactoryTest-context.xml");
+            ClassPathXmlApplicationContext ctx2 = new ClassPathXmlApplicationContext(
+                    "/com/test/wxs/cache/wxs/LocalObjectGridFactoryTest-context.xml");
+            LocalObjectGridFactory localObjectGridFactory1 = ctx1.getBean(LocalObjectGridFactory.class);
+            LocalObjectGridFactory localObjectGridFactory2 = ctx2.getBean(LocalObjectGridFactory.class);
+            ctx1.close();
+            ctx2.close();
+            assertNotSame(localObjectGridFactory1, localObjectGridFactory2);
+            assertSame(localObjectGridFactory1.getObjectGrid(), localObjectGridFactory2.getObjectGrid());
         } catch (Exception e) {
-	        fail(e.getMessage());
-        }		
-	}	
+            fail(e.getMessage());
+        }
+    }
 }

@@ -23,15 +23,15 @@ public class LocalSideCacheTest {
 
     @Before
     public void init() {
-    	LocalSideCacheTestKey key1 = new LocalSideCacheTestKey("1");
-        LocalSideCacheTestKey key2 = new LocalSideCacheTestKey("2");	
+        LocalSideCacheTestKey key1 = new LocalSideCacheTestKey("1");
+        LocalSideCacheTestKey key2 = new LocalSideCacheTestKey("2");
         cache.put(key1, "value1");
         cache.put(key2, "value2");
     }
 
     @Test
     public void testGet1() {
-    	LocalSideCacheTestKey key1 = new LocalSideCacheTestKey("1");
+        LocalSideCacheTestKey key1 = new LocalSideCacheTestKey("1");
         assertEquals("value1", cache.get(key1));
     }
 

@@ -1,9 +1,8 @@
 package com.test.wxs.cache;
 
-
 /**
- * The Config class represents the configuration of a element stored within a {@link Cache}. It is intended to be used
- * by implementations of the {@link Cache} interface.
+ * The Config class represents the configuration of a element stored within a {@link Cache}. It is intended to be used by implementations of
+ * the {@link Cache} interface.
  */
 public class Config {
     private boolean replication;
@@ -11,14 +10,12 @@ public class Config {
     private Scope scope;
     private int timeToLive;
     private String context;
-    
+
     /**
      * The Scope defines the supported scopes.
      */
     public enum Scope {
-        APPLICATION,
-        PROFILE,
-        REQUEST;
+        APPLICATION, PROFILE, REQUEST;
     }
 
     /**
@@ -43,7 +40,8 @@ public class Config {
     /**
      * Sets the time in seconds that the cache entry should remain in the cache.
      * 
-     * @param timeToLive the time in seconds that the cache entry should remain in the cache
+     * @param timeToLive
+     *            the time in seconds that the cache entry should remain in the cache
      */
     public void setTimeToLive(int timeToLive) {
         this.timeToLive = timeToLive;
@@ -61,7 +59,8 @@ public class Config {
     /**
      * Sets the on.
      * 
-     * @param on the on
+     * @param on
+     *            the on
      */
     public void setOn(boolean on) {
         this.on = on;
@@ -79,7 +78,8 @@ public class Config {
     /**
      * Sets the replication.
      * 
-     * @param replicable the replication
+     * @param replicable
+     *            the replication
      */
     public void setReplication(boolean replicate) {
         this.replication = replicate;
@@ -97,7 +97,8 @@ public class Config {
     /**
      * Sets the scope.
      * 
-     * @param scope the scope
+     * @param scope
+     *            the scope
      */
     public void setScope(Scope scope) {
         this.scope = scope;
@@ -106,7 +107,8 @@ public class Config {
     /**
      * Sets the context.
      * 
-     * @param context the context
+     * @param context
+     *            the context
      */
     public void setContext(String context) {
         this.context = context;

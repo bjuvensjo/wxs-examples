@@ -12,9 +12,8 @@ import com.ibm.websphere.objectgrid.ObjectGrid;
 import com.ibm.websphere.objectgrid.security.config.ClientSecurityConfiguration;
 
 /**
- * RemoteObjectGridFactory is a utility class which make it easier to configure
- * a remote ("clustered") ObjectGrid with the Spring framework. It can be used
- * across Spring contexts.
+ * RemoteObjectGridFactory is a utility class which make it easier to configure a remote ("clustered") ObjectGrid with the Spring framework.
+ * It can be used across Spring contexts.
  */
 public class RemoteObjectGridFactory implements ObjectGridFactory {
     private Logger log = LoggerFactory.getLogger(RemoteObjectGridFactory.class);
@@ -43,10 +42,12 @@ public class RemoteObjectGridFactory implements ObjectGridFactory {
         if (objectGrid == null) {
             log.debug("objectGrid is null. catalogServerAddresses: {}, objectGridName: {}", catalogServerAddresses, objectGridName);
             try {
-                objectGrid = ObjectGridCacheFactory.getInstance().getRemoteObjectGrid(objectGridName, overRideObjectGridXml, catalogServerAddresses, clientSecurityConfiguration);
+                objectGrid = ObjectGridCacheFactory.getInstance().getRemoteObjectGrid(objectGridName, overRideObjectGridXml,
+                        catalogServerAddresses, clientSecurityConfiguration);
             } catch (Exception e) {
                 CacheException cacheException = exceptionCreator.getCacheException(ExceptionCreator.Error.INITIALIZE, e);
-                log.error("Can not connect to catalogServerAddresses: {}, objectGridName: {}", catalogServerAddresses, objectGridName, cacheException);
+                log.error("Can not connect to catalogServerAddresses: {}, objectGridName: {}", catalogServerAddresses, objectGridName,
+                        cacheException);
                 throw cacheException;
             }
         }

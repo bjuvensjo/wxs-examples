@@ -27,7 +27,7 @@ public class CommitStatus implements Serializable {
 
     @Override
     public String toString() {
-        return "CommitStatus [numberOfCommittedValues=" + numberOfCommittedValues + ", numberOfCommitFailures="
-                + numberOfCommitFailures + "]";
+        return "CommitStatus [numberOfCommittedValues=" + numberOfCommittedValues + ", numberOfCommitFailures=" + numberOfCommitFailures
+                + "]";
     }
 }

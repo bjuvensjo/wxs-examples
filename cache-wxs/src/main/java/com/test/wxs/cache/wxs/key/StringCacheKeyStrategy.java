@@ -65,10 +65,10 @@ public class StringCacheKeyStrategy<K extends CacheKey> implements CacheKeyStrat
             if (Config.Scope.APPLICATION.equals(config.getScope())) {
                 // Empty by design.
             } else if (Config.Scope.PROFILE.equals(config.getScope())) {
-                // TODO Implement! 
+                // TODO Implement!
                 // stringBuilder.append(ActiveProfileImpl.get().getId()).append(KEY_SEPARATOR);
             } else if (Config.Scope.REQUEST.equals(config.getScope())) {
-                // TODO Implement!                
+                // TODO Implement!
                 // stringBuilder.append(CommonContextFetcher.get().getServiceRequestId()).append(KEY_SEPARATOR);
             }
         }

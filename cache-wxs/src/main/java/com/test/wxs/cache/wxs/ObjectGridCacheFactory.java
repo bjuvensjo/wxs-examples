@@ -33,8 +33,7 @@ public class ObjectGridCacheFactory {
      * @return a local object grid
      * @throws ObjectGridException
      */
-    public synchronized ObjectGrid getLocalObjectGrid(String objectGridName, URL objectGridXML)
-            throws ObjectGridException {
+    public synchronized ObjectGrid getLocalObjectGrid(String objectGridName, URL objectGridXML) throws ObjectGridException {
         ObjectGridManager objectGridManager = ObjectGridManagerFactory.getObjectGridManager();
         ObjectGrid objectGrid = objectGridManager.getObjectGrid(objectGridName);
         if (objectGrid == null) {
@@ -54,18 +53,16 @@ public class ObjectGridCacheFactory {
      * @return a remote object grid
      * @throws ConnectException
      */
-    public synchronized ObjectGrid getRemoteObjectGrid(String objectGridName, URL overRideObjectGridXml,
-            String catalogServerAddresses, ClientSecurityConfiguration clientSecurityConfiguration)
-            throws ConnectException {
+    public synchronized ObjectGrid getRemoteObjectGrid(String objectGridName, URL overRideObjectGridXml, String catalogServerAddresses,
+            ClientSecurityConfiguration clientSecurityConfiguration) throws ConnectException {
         ObjectGridManager objectGridManager = ObjectGridManagerFactory.getObjectGridManager();
-        ClientClusterContext ccc = getClientClusterContext(objectGridManager, overRideObjectGridXml,
-                catalogServerAddresses, clientSecurityConfiguration);
+        ClientClusterContext ccc = getClientClusterContext(objectGridManager, overRideObjectGridXml, catalogServerAddresses,
+                clientSecurityConfiguration);
         return objectGridManager.getObjectGrid(ccc, objectGridName);
     }
 
-    private ClientClusterContext getClientClusterContext(ObjectGridManager objectGridManager,
-            URL overRideObjectGridXml, String catalogServerAddresses,
-            ClientSecurityConfiguration clientSecurityConfiguration) throws ConnectException {
+    private ClientClusterContext getClientClusterContext(ObjectGridManager objectGridManager, URL overRideObjectGridXml,
+            String catalogServerAddresses, ClientSecurityConfiguration clientSecurityConfiguration) throws ConnectException {
         if (catalogServerAddresses == null) {
             return objectGridManager.connect(clientSecurityConfiguration, overRideObjectGridXml);
         }

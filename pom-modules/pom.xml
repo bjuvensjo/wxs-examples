@@ -1,8 +1,8 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.test.wxs</groupId>
-    <artifactId>modules</artifactId>	
+    <artifactId>modules</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
@@ -14,14 +14,11 @@
         <module>../distributed-preloaded-cache</module>
         <module>../distributed-preloaded-cache-loader</module>
         <module>../distributed-side-cache</module>
-        <module>../local-side-cache</module>
         <module>../model</module>
         <module>../model-account</module>
-        <module>../pom-parent</module>        
+        <module>../pom-parent</module>
         <module>../service</module>
-        <module>../thebank</module>
     </modules>
-
 </project>
 
 

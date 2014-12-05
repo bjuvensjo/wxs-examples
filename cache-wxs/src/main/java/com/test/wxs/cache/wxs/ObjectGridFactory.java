@@ -7,10 +7,10 @@ import com.ibm.websphere.objectgrid.ObjectGrid;
  */
 public interface ObjectGridFactory {
 
-	/**
-	 * Returns an ObjectGrid.
-	 * 
-	 * @return an ObjectGrid
-	 */
-	ObjectGrid getObjectGrid();
+    /**
+     * Returns an ObjectGrid.
+     * 
+     * @return an ObjectGrid
+     */
+    ObjectGrid getObjectGrid();
 }

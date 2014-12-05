@@ -16,14 +16,16 @@ public interface CacheKeyStrategy<K extends CacheKey> {
     /**
      * Initializes the CacheStrategy utilizing the specified config.
      * 
-     * @param config the config.
+     * @param config
+     *            the config.
      */
     void init(Config config);
-    
+
     /**
      * Returns the cache keys corresponding to the specified keys.
      * 
-     * @param keys the keys
+     * @param keys
+     *            the keys
      * @return the cache keys corresponding to the specified keys
      */
     List<Serializable> createCacheKeys(List<K> keys);
@@ -31,7 +33,8 @@ public interface CacheKeyStrategy<K extends CacheKey> {
     /**
      * Returns the cache key corresponding to the specified key
      * 
-     * @param key the key
+     * @param key
+     *            the key
      * @return the cache key corresponding to the specified key
      */
     Serializable createCacheKey(K key);

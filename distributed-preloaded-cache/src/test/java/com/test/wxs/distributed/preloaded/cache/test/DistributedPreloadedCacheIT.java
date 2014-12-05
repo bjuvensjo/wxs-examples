@@ -36,7 +36,7 @@ public class DistributedPreloadedCacheIT {
         DistributedPreloadedCacheTestKey key2 = new DistributedPreloadedCacheTestKey("31");
         keys.add(key1);
         keys.add(key2);
-        
+
         List<Account> result = cache.get(keys);
         assertEquals(2, result.size());
     }

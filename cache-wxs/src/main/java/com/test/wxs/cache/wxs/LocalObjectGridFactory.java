@@ -11,9 +11,8 @@ import com.test.wxs.cache.wxs.ExceptionCreator;
 import com.ibm.websphere.objectgrid.ObjectGrid;
 
 /**
- * LocalObjectGridFactory is a utility class which make it easier to configure a
- * local in-memory ObjectGrid with the Spring framework. It can be used across
- * Spring contexts.
+ * LocalObjectGridFactory is a utility class which make it easier to configure a local in-memory ObjectGrid with the Spring framework. It
+ * can be used across Spring contexts.
  */
 public class LocalObjectGridFactory implements ObjectGridFactory {
     private Logger log = LoggerFactory.getLogger(LocalObjectGridFactory.class);
@@ -29,9 +28,10 @@ public class LocalObjectGridFactory implements ObjectGridFactory {
         exceptionCreator = new ExceptionCreator();
     }
 
-    /** 
+    /**
      * @see com.test.wxs.cache.wxs.ObjectGridFactory#getObjectGrid()
      */
+    @Override
     public ObjectGrid getObjectGrid() {
         if (objectGrid == null) {
             log.debug("objectGrid is null. objectGridXML: {}, objectGridName: {}", objectGridXML, objectGridName);
@@ -39,10 +39,9 @@ public class LocalObjectGridFactory implements ObjectGridFactory {
                 objectGrid = ObjectGridCacheFactory.getInstance().getLocalObjectGrid(objectGridName, objectGridXML);
 
             } catch (Exception e) {
-                CacheException cacheException = exceptionCreator.getCacheException(
-                        ExceptionCreator.Error.INITIALIZE, e);
-                log.error("Can not initialize objectGridXML: {}, objectGridName: {}", new Object[] { objectGridXML,
-                        objectGridName }, cacheException);
+                CacheException cacheException = exceptionCreator.getCacheException(ExceptionCreator.Error.INITIALIZE, e);
+                log.error("Can not initialize objectGridXML: {}, objectGridName: {}", new Object[] { objectGridXML, objectGridName },
+                        cacheException);
                 throw cacheException;
             }
         }

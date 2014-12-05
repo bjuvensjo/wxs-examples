@@ -16,19 +16,19 @@ import com.test.wxs.model.account.Account;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration
-public class DistributedInlineCacheIT {    
+public class DistributedInlineCacheIT {
     @Autowired
     private Cache<DistributedInlineCacheTestKey, Account> cache;
-        
+
     @Test
     public void testSingleAccount() {
         DistributedInlineCacheTestKey key = new DistributedInlineCacheTestKey("1");
         Account expected = new Account("1", 1);
-        
+
         Account actual = cache.get(key);
         assertEquals(expected, actual);
     }
-    
+
     @Test
     public void testGetListOfAccounts() {
         List<DistributedInlineCacheTestKey> keys = new ArrayList<DistributedInlineCacheTestKey>();

@@ -11,12 +11,15 @@ public class CacheException extends RuntimeException {
     /**
      * Creates an CacheException with the specified context, code, message and cause.
      * 
-     * @param context a module specific namespace string used to avoid naming conflicts between error codes of different
-     *            modules
-     * @param code a numerical code that is unique within the specified context
-     * @param message the detail message (which is saved for later retrieval by the Throwable.getMessage() method).
-     * @param cause the cause (which is saved for later retrieval by the Throwable.getCause() method). (A null value is
-     *            permitted, and indicates that the cause is nonexistent or unknown.)
+     * @param context
+     *            a module specific namespace string used to avoid naming conflicts between error codes of different modules
+     * @param code
+     *            a numerical code that is unique within the specified context
+     * @param message
+     *            the detail message (which is saved for later retrieval by the Throwable.getMessage() method).
+     * @param cause
+     *            the cause (which is saved for later retrieval by the Throwable.getCause() method). (A null value is permitted, and
+     *            indicates that the cause is nonexistent or unknown.)
      */
     public CacheException(String context, int code, String message, Throwable cause) {
         super(message, cause);
@@ -25,13 +28,14 @@ public class CacheException extends RuntimeException {
     }
 
     /**
-     * Creates an CacheException with the specified context, code, message. Should only be used if there exists no
-     * cause.
+     * Creates an CacheException with the specified context, code, message. Should only be used if there exists no cause.
      * 
-     * @param context a module specific namespace string used to avoid naming conflicts between error codes of different
-     *            modules
-     * @param code a numerical code that is unique within the specified context
-     * @param message the detail message (which is saved for later retrieval by the Throwable.getMessage() method).
+     * @param context
+     *            a module specific namespace string used to avoid naming conflicts between error codes of different modules
+     * @param code
+     *            a numerical code that is unique within the specified context
+     * @param message
+     *            the detail message (which is saved for later retrieval by the Throwable.getMessage() method).
      */
     public CacheException(String context, int code, String message) {
         this(context, code, message, null);
@@ -57,7 +61,7 @@ public class CacheException extends RuntimeException {
 
     @Override
     public String toString() {
-        return new StringBuilder().append(getClass().getName()).append("[context: ").append(context).append(", code: ")
-                .append(code).append(", message: ").append(getMessage()).append("]").toString();
+        return new StringBuilder().append(getClass().getName()).append("[context: ").append(context).append(", code: ").append(code)
+                .append(", message: ").append(getMessage()).append("]").toString();
     }
 }

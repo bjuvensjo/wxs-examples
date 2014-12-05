@@ -15,9 +15,9 @@ import com.ibm.websphere.objectgrid.plugins.OptimisticCollisionException;
 
 public class CacheLoader implements Loader {
 
-	@Override
-	public void batchUpdate(TxID txID, LogSequence logSequence) throws LoaderException, OptimisticCollisionException {
-	}
+    @Override
+    public void batchUpdate(TxID txID, LogSequence logSequence) throws LoaderException, OptimisticCollisionException {
+    }
 
     @SuppressWarnings({ "rawtypes", "unchecked" })
     @Override
@@ -39,7 +39,7 @@ public class CacheLoader implements Loader {
         return account;
     }
 
-	@Override
-	public void preloadMap(Session session, BackingMap backingMap) throws LoaderException {
-	}
+    @Override
+    public void preloadMap(Session session, BackingMap backingMap) throws LoaderException {
+    }
 }

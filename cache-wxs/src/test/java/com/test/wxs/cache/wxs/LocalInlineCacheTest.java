@@ -20,12 +20,12 @@ public class LocalInlineCacheTest {
     @Test
     public void testGet1() {
         LocalInlineCacheTestKey key = new LocalInlineCacheTestKey("foo", "bar");
-        
+
         String expected = key.toString();
-        
+
         String actual = cache.get(key);
         assertEquals(expected, actual);
-        
+
         actual = cache.get(key);
         assertEquals(expected, actual);
     }

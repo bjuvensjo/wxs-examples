@@ -14,12 +14,12 @@ public class CacheObject implements Serializable {
         this.id = id;
         this.value = value;
     }
-    
-	public String getId() {
-		return id;
-	}
 
-	public Serializable getValue() {
-		return value;
-	}
+    public String getId() {
+        return id;
+    }
+
+    public Serializable getValue() {
+        return value;
+    }
 }
