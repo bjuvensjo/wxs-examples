@@ -1,5 +1,5 @@
 Manifest-Version: 1.0
-Bnd-LastModified: 1417808905038
+Bnd-LastModified: 1417810910173
 Build-Jdk: 1.7.0_21
 Built-By: ei4577
 Bundle-ManifestVersion: 2
@@ -12,6 +12,5 @@ Export-Package: com.test.wxs.agent;version="0.0.1";uses:="com.ibm.websph
 Import-Package: com.ibm.websphere.objectgrid,com.ibm.websphere.objectgri
  d.datagrid,com.test.wxs.model;version="[0.0,1)",com.test.wxs.model.acco
  unt;version="[0.0,1)",com.test.wxs.service;version="[0.0,1)"
-Originally-Created-By: Apache Maven Bundle Plugin
 Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.7))"
 Tool: Bnd-2.3.0.201405100607
